@@ -26,6 +26,7 @@
 mod audio;
 mod audio_output;
 mod audio_source;
+mod sine_wave;
 mod sinks;
 
 #[allow(missing_docs)]
