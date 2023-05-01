@@ -954,6 +954,16 @@ category = "Audio"
 wasm = true
 
 [[example]]
+name = "sine_wave"
+path = "examples/audio/sine_wave.rs"
+
+[package.metadata.example.sine_wave]
+name = "Sine Wave"
+description = "__TODO__"
+category = "Audio"
+wasm = true
+
+[[example]]
 name = "spatial_audio_2d"
 path = "examples/audio/spatial_audio_2d.rs"
 

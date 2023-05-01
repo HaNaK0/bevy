@@ -34,7 +34,7 @@ pub mod prelude {
     #[doc(hidden)]
     pub use crate::{
         Audio, AudioOutput, AudioSink, AudioSinkPlayback, AudioSource, Decodable, GlobalVolume,
-        PlaybackSettings, SpatialAudioSink,
+        PlaybackSettings, SpatialAudioSink, SineWave,
     };
 }
 
@@ -45,6 +45,7 @@ pub use audio_source::*;
 pub use rodio::cpal::Sample as CpalSample;
 pub use rodio::source::Source;
 pub use rodio::Sample;
+pub use sine_wave::*;
 pub use sinks::*;
 
 use bevy_app::prelude::*;
@@ -67,7 +68,8 @@ impl Plugin for AudioPlugin {
             .add_asset::<SpatialAudioSink>()
             .init_resource::<Audio<AudioSource>>()
             .insert_resource(self.global_volume)
-            .add_systems(PostUpdate, play_queued_audio_system::<AudioSource>);
+            .add_systems(PostUpdate, play_queued_audio_system::<AudioSource>)
+            .add_audio_source::<SineWave>();
 
         #[cfg(any(feature = "mp3", feature = "flac", feature = "wav", feature = "vorbis"))]
         app.init_asset_loader::<AudioLoader>();
