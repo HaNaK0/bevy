@@ -959,7 +959,7 @@ path = "examples/audio/sine_wave.rs"
 
 [package.metadata.example.sine_wave]
 name = "Sine Wave"
-description = "__TODO__"
+description = "Shows how to use the sinewave struct to play a sinewave"
 category = "Audio"
 wasm = true
 

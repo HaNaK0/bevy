@@ -1,10 +1,9 @@
-use bevy_asset::Asset;
 use bevy_reflect::TypeUuid;
-use rodio::{source};
+use rodio::source;
 
 use crate::Decodable;
 
-/// A source that generates an infinite sine wave
+/// An audio source that generates an infinite sine wave by exposing an interface to rodios sine wave source
 #[derive(Debug, Clone, TypeUuid)]
 #[uuid = "95e5b43a-e254-4232-b6e4-fc9db29dd6ce"]
 pub struct SineWave {
@@ -12,6 +11,7 @@ pub struct SineWave {
 }
 
 impl SineWave {
+    /// Create a new SineWave struct
     pub fn new(freq: f32) -> Self {
         SineWave { freq }
     }
